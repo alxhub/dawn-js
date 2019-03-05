@@ -17,7 +17,9 @@ jobs:
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
-      # Run Tests
+      - run:
+          name: Test
+          command: yarn test
 
   test_node_8:
     docker:
@@ -36,6 +38,9 @@ jobs:
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
+      - run:
+          name: Test
+          command: yarn test
 
   test_node_10:
     docker:
@@ -54,6 +59,9 @@ jobs:
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
+      - run:
+          name: Test
+          command: yarn test
 
   release:
     docker:
@@ -61,8 +69,7 @@ jobs:
     steps:
       - checkout
       - run: yarn install --ignore-engines
-      # Run optional required steps before releasing
-      # - run: npm run build-script
+      - run: yarn build
       - run: yarn run semantic-release
 
 workflows:

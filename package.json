@@ -1,39 +1,38 @@
 {
-  "name": "dawn-js",
-  "version": "0.0.1",
-  "description": "A javascript API to the dawn ecosystem",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "repository": "https://github.com/Olypsis/dawn-js",
-  "license": "MIT",
-  "keywords": [],
-  "author": "",
-  "scripts": {
-    "test": "jest --config jestconfig.json",
-    "build": "tsc",
-    "build:watch": "tsc --watch",
-    "lint": "tslint -p tsconfig.json",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "docs": "typedoc --out docs src",
-    "gh-pages": "rimraf docs && npm run docs && gh-pages -d docs",
-    "prepare": "yarn run build",
-    "prepublishOnly": "yarn test && yarn run lint"
-  },
-  "devDependencies": {
-    "@types/jest": "^24.0.9",
-    "@types/node": "^11.10.4",
-    "eslint": "^5.15.1",
-    "gh-pages": "^2.0.1",
-    "jest": "^24.1.0",
-    "prettier": "^1.16.4",
-    "semantic-release": "^15.13.3",
-    "ts-jest": "^24.0.0",
-    "tslint": "^5.13.1",
-    "tslint-config-prettier": "^1.18.0",
-    "typedoc": "^0.14.2",
-    "typescript": "^3.3.3333"
-  },
-  "files": [
-    "dist/**/*"
-  ]
+    "name": "dawn-js",
+    "version": "1.0.0",
+    "description": "A javascript API to the dawn ecosystem",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "repository": "https://github.com/Olypsis/dawn-js",
+    "license": "MIT",
+    "keywords": [],
+    "leadMaintainer": "Sharad Shekar <sharadshekar@gmail.com>",
+    "author": "Edmund Miller <edmund.a.miller@gmail.com>",
+    "scripts": {
+        "test": "jest --config jestconfig.json",
+        "build": "tsc",
+        "build:watch": "tsc --watch",
+        "lint": "tslint -p tsconfig.json",
+        "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+        "docs": "typedoc --out docs src",
+        "gh-pages": "rimraf docs && npm run docs && gh-pages -d docs",
+        "prepare": "yarn run build",
+        "prepublishOnly": "yarn test && yarn run lint"
+    },
+    "devDependencies": {
+        "@types/jest": "^24.0.9",
+        "@types/node": "^11.10.4",
+        "eslint": "^5.15.1",
+        "gh-pages": "^2.0.1",
+        "jest": "^24.1.0",
+        "prettier": "^1.16.4",
+        "semantic-release": "^15.13.3",
+        "ts-jest": "^24.0.0",
+        "tslint": "^5.13.1",
+        "tslint-config-prettier": "^1.18.0",
+        "typedoc": "^0.14.2",
+        "typescript": "^3.3.3333"
+    },
+    "files": ["dist/**/*"]
 }

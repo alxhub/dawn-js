@@ -16,7 +16,8 @@
         "lint": "tslint -p tsconfig.json",
         "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
         "docs": "typedoc --out docs src",
-        "gh-pages": "rimraf docs && npm run docs && gh-pages -d docs"
+        "gh-pages": "rimraf docs && npm run docs && gh-pages -d docs",
+        "postinstall": "yarn build"
     },
     "devDependencies": {
         "@semantic-release/github": "^5.2.10",

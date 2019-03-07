@@ -1,3 +1,5 @@
-export const Greeter = (name: string) => `Hello ${name}`;
-export const Curser = (name: string) => `Curse you ${name}`;
+import { connectStatus } from './status';
 
+connectStatus().then((publicKey: string) => {
+  console.log('Logged in with public key:', publicKey);
+});

@@ -17,14 +17,17 @@
         "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
         "docs": "typedoc --out docs src",
         "gh-pages": "rimraf docs && npm run docs && gh-pages -d docs",
-        "postinstall": "yarn build"
+        "postinstall": "yarn build",
+        "clean": "rimraf dist && rimraf node_modules && yarn"
     },
     "devDependencies": {
+        "@babel/runtime-corejs2": "^7.3.4",
         "@semantic-release/github": "^5.2.10",
         "@semantic-release/npm": "^5.1.4",
         "@semantic-release/release-notes-generator": "^7.1.4",
         "@types/jest": "^24.0.9",
         "@types/node": "^11.10.4",
+        "@types/web3": "^1.0.18",
         "eslint": "^5.15.1",
         "gh-pages": "^2.0.1",
         "jest": "^24.1.0",
@@ -38,5 +41,8 @@
     },
     "files": [
         "dist/**/*"
-    ]
+    ],
+    "dependencies": {
+        "status-js-api": "^1.2.9"
+    }
 }

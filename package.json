@@ -8,7 +8,7 @@
     "license": "MIT",
     "keywords": [],
     "leadMaintainer": "Sharad Shekar <sharadshekar@gmail.com>",
-    "author": "Edmund Miller <edmund.a.miller@gmail.com>",
+    "author": "Sharad Shekar <sharadshekar@gmail.com>",
     "scripts": {
         "test": "jest --config jestconfig.json",
         "build": "tsc",

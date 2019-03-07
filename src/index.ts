@@ -1,4 +1,5 @@
 import { connectStatus, newStatus } from './status';
+import {StatusJS} from '../external/status-js-api';
 
 const testProvider = 'http://35.188.163.32:8545';
 

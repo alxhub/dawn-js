@@ -1,4 +1,4 @@
-import * as StatusJSAPI from "status-js-api";
+import {StatusJS as StatusJSAPI} from '../../external/status-js-api';
 
 const testProvider = 'http://35.188.163.32:8545';
 
@@ -12,7 +12,7 @@ export const connectStatus = async (
     return await statusJS.getPublicKey();
 };
 
-export const newStatus = () : StatusJS => {
+export const newStatus = () : StatusJSAPI => {
     return new StatusJSAPI();
 };
 

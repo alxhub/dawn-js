@@ -1,29 +1,37 @@
 import { connectStatus, newStatus } from './status';
 
-// connectStatus().then((publicKey: string) => {
-//   console.log('Logged in with public key:', publicKey);
-// });
-
 const testProvider = 'http://35.188.163.32:8545';
-
-interface IStatusConnect {
-    provider?: string,
-    privateKey?: string,
-}
 
 export class Dawn {
   public statusJS?: StatusJS;
-  public statusPublicKey? : string;
-  public async connect(): Promise<boolean> {
+  public statusPublicKey?: string;
+  public statusUsername?: string;
+
+  public async connect(
+    statusProvider: string = testProvider,
+    privateKey?: string,
+  ): Promise<boolean> {
     try {
+      // Instantiate Status
       this.statusJS = newStatus();
-      await this.statusJS.connect(testProvider);
+      console.log('Status initialized');
+
+      // Connect to Status Provider
+      await this.statusJS.connect(statusProvider, privateKey);
+
+      // Get Public Key
       this.statusPublicKey = await this.statusJS.getPublicKey();
-      console.log('Status:', this.statusJS);
-      console.log('Connected to Status. Public Key:', this.statusPublicKey);
+      this.statusUsername = await this.statusJS.getUserName();
+
+      console.log(
+        `Connected to Status as ${this.statusUsername}. \nPublic Key: ${
+          this.statusPublicKey
+        }`,
+      );
       return true;
     } catch (err) {
-      throw err;
+      // Something failed
+      console.log(err.message);
       return false;
     }
   }
